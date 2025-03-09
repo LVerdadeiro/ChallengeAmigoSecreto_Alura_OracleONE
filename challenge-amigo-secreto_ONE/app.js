@@ -14,7 +14,22 @@ function adicionarAmigo() {
         lista_de_amigos.appendChild(elemento_lista);
 
         input_amigo.value = "";
-    } else 
+    } 
+    else 
         alert("Nome inválido ou já adicionado!");
     
+}
+
+let resultado_sorteio = document.getElementById("resultado");
+
+function sortearAmigo(){
+    const indice_sorteado = Math.floor(Math.random() * amigos.length);
+    
+    let amigo_sorteado = document.createElement("li");
+    
+    amigo_sorteado.textContent = `O amigo sorteado é ${amigos[indice_sorteado]}`;
+
+    resultado_sorteio.appendChild(amigo_sorteado);
+
+    lista_de_amigos.replaceChildren();
 }
